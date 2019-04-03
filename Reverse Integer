@@ -1,0 +1,18 @@
+class Solution:
+    def reverse(self, x: 'int') -> 'int':
+        flag = 0
+        reverse=0
+        if x<0:
+            flag=1
+            x=-x
+        while x>0:
+            rem=x%10
+            reverse = reverse*10 + rem
+            x=x//10
+        if reverse not in range(-2147483648,2147483648):
+            return(0)    
+        if flag:
+            return(-reverse)
+        return(reverse)
+        
+        
