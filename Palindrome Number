@@ -1,0 +1,11 @@
+#Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+class Solution:
+    def isPalindrome(self, x: 'int') -> 'bool':
+        reverse = 0
+        temp = x
+        while(temp > 0):
+            rem = temp % 10
+            reverse = (reverse * 10) + rem
+            temp = temp //10
+        return(x==reverse)       
+        
