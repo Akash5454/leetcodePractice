@@ -1,0 +1,8 @@
+class Solution:
+    def middleNode(self, head: ListNode) -> ListNode:
+        i = head
+        j = i
+        while(j != None and j.next != None):
+            i = i.next
+            j = j.next.next
+        return(i)
