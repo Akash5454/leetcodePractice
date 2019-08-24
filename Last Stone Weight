@@ -1,0 +1,15 @@
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        heapq.heapify(stones)
+        while len(stones) > 1:
+            largest = heapq.nlargest(2,stones)
+            if largest[0] != largest[1]:
+                for i in largest:
+                    stones.remove(i)
+                heapq.heappush(stones,abs(largest[0] - largest[1])) 
+            else:
+                for j in largest:
+                    stones.remove(j)
+        if stones:
+            return stones[0]
+        return 0
